@@ -1,0 +1,35 @@
+{
+  "projects": [
+    {
+      "id": "p1",
+      "name": "Meu Futuro",
+      "type": "site",
+      "url": "https://meufuturo.netlify.app/",
+      "text": "Projeto web desenvolvido para o Open Day.",
+      "desc": "Edite este texto pelo modo Admin para explicar o objetivo, o público e como o projeto funciona.",
+      "imgs": [
+        "assets/img/p1-1.jpg",
+        "assets/img/p1-2.jpg"
+      ]
+    },
+    {
+      "id": "p2",
+      "name": "Health Spy",
+      "type": "site",
+      "url": "https://health-spy.netlify.app/",
+      "text": "Projeto web voltado à saúde.",
+      "desc": "Edite este texto pelo modo Admin para explicar o objetivo, o público e como o projeto funciona.",
+      "imgs": []
+    },
+    {
+      "id": "p3",
+      "name": "Águas de JP",
+      "type": "instagram",
+      "url": "https://www.instagram.com/aguasde_jp/",
+      "text": "Projeto divulgado no Instagram.",
+      "desc": "Edite este texto pelo modo Admin e adicione fotos do projeto para aparecerem no carrossel.",
+      "imgs": []
+    }
+  ],
+  "videos": []
+}
