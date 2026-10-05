@@ -1,0 +1,330 @@
+/* Modal de projeto (carrossel) e diálogos/admin */
+#ov {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: #1a0f16b8;
+    backdrop-filter: blur(4px);
+    display: none;
+    place-items: center
+}
+
+#ov.on {
+    display: grid
+}
+
+.big {
+    width: 65vw;
+    height: 70vh;
+    max-width: 96vw;
+    background: var(--card);
+    border-radius: 24px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    position: relative;
+    animation: pop .25s
+}
+
+@keyframes pop {
+    from {
+        transform: scale(.7);
+        opacity: 0
+    }
+}
+
+.big .th {
+    aspect-ratio: auto;
+    height: 100%;
+    border-radius: 0
+}
+
+.big .th iframe {
+    width: 100%;
+    height: 100%;
+    transform: none;
+    pointer-events: auto
+}
+
+.big .th .ttl {
+    display: none
+}
+
+.info {
+    padding: 30px 28px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px
+}
+
+.info h3 {
+    margin: 0;
+    font-size: 26px;
+    color: var(--pk);
+    padding-right: 30px
+}
+
+.info h4 {
+    margin: 0;
+    font-size: 13px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--mut)
+}
+
+.info p {
+    margin: 0;
+    line-height: 1.7;
+    font-size: 15px;
+    white-space: pre-line
+}
+
+.x {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    z-index: 5;
+    background: #fff;
+    color: var(--pk);
+    border: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 2px 8px #0003
+}
+
+.ar {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+    background: #fffffff0;
+    color: var(--pk);
+    border: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 26px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px #0004;
+    line-height: 1
+}
+
+.ar.l {
+    left: 12px
+}
+
+.ar.r {
+    right: 12px
+}
+
+.dots {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    z-index: 4
+}
+
+.dots i {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #fff9
+}
+
+.dots i.on {
+    background: #fff;
+    box-shadow: 0 0 0 2px var(--pk)
+}
+
+#dlg {
+    position: fixed;
+    inset: 0;
+    z-index: 70;
+    background: #1a0f16c0;
+    display: none;
+    place-items: center;
+    padding: 12px
+}
+
+#dlg.on {
+    display: grid
+}
+
+.box {
+    background: var(--card);
+    border: 2px solid var(--pk);
+    border-radius: 20px;
+    padding: 22px;
+    width: min(520px, 100%);
+    max-height: 92vh;
+    overflow: auto
+}
+
+.box h3 {
+    margin: 0 0 14px;
+    color: var(--pk)
+}
+
+.box label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--mut);
+    display: block;
+    margin: 4px 0 3px
+}
+
+.box input,
+.box select,
+.box textarea {
+    width: 100%;
+    margin: 0 0 8px;
+    padding: 10px;
+    border: 1px solid var(--bd);
+    border-radius: 10px;
+    background: var(--bg);
+    color: var(--tx);
+    font: inherit;
+    font-size: 14px
+}
+
+.msg {
+    font-size: 13px;
+    color: var(--pk);
+    min-height: 18px;
+    margin-bottom: 6px
+}
+
+.gal {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 8px
+}
+
+.gal div {
+    position: relative
+}
+
+.gal img {
+    width: 70px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px
+}
+
+.gal button {
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 0;
+    background: var(--pk);
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px
+}
+
+#bar {
+    position: fixed;
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    z-index: 40;
+    display: none;
+    gap: 8px;
+    background: var(--card);
+    border: 2px solid var(--pk);
+    border-radius: 99px;
+    padding: 8px 12px;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 600
+}
+
+#bar.on {
+    display: flex
+}
+
+/* slide: mídia inteira (sem cortar) sobre fundo desfocado dela mesma */
+.sl {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    container-type: size;
+    overflow: hidden;
+    background: #1a0f16
+}
+
+.sl .bg {
+    position: absolute;
+    inset: -24px;
+    width: calc(100% + 48px);
+    height: calc(100% + 48px);
+    object-fit: cover;
+    filter: blur(26px) brightness(.7);
+    pointer-events: none
+}
+
+.sl .fg {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    background: none
+}
+
+.big .th .sl iframe.fg {
+    position: relative;
+    transform: none;
+    border: 0;
+    width: min(100cqw, 100cqh * 16 / 9);
+    height: auto;
+    aspect-ratio: 16/9;
+    pointer-events: auto;
+    background: #000
+}
+
+.row {
+    display: flex;
+    gap: 6px;
+    align-items: flex-start
+}
+
+.row input {
+    margin: 0
+}
+
+.row .btn {
+    flex: none;
+    margin-top: 2px
+}
+
+.gal .vt {
+    display: grid;
+    place-items: center;
+    width: 70px;
+    height: 50px;
+    border-radius: 8px;
+    background: var(--pk);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600
+}
+
+.gal .mv {
+    left: -6px;
+    right: auto
+}
